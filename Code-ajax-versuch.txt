@@ -1,0 +1,5 @@
+ var myRequest = newXMLHttpRequest ();
+              xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("html/News.html").innerHTML = xhttp.responseText;
+    }

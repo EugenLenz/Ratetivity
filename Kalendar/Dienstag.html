@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Dienstag</title>
+    <link rel="stylesheet" href="formate.css" type="text/css">
+</head>
+    
+    <h2>Dienstag, 27.10</h2>
+<body>
+    
+     <a href="index.html">Zur Startseite!</a>
+     <a href="Events.html">Zur Tagesauswahl!</a>
+    
+    <table>
+        <strong><tr><th>Titel</th><th>Location</th><th>Uhrzeit</th><th>Ort</th><th>Kategorie</th></tr></strong>
+        <tr><th>VISUM International Party: Festival </th><th>Soho J7,16 68159 Mannheim</th> <th>22:30-03:00 </th><th>Mannheim</th><th>Unifeten</th>></tr>
+        <tr><th>Ducs "Our Addiction Tour 2015"</th><th>Alte Seilerei Angelstr. 33 68199 Mannheim</th><th>19:00 - 00:00</th><th>Mannheim</th><th>Konzert</th></tr>
+<tr><th>Rico, Oscar und der Diebstahlstein</th><th>Theater Heidelberg Zwingerstr. 3-5 69117 Heidelberg</th><th>20:00 - 22:30</th><th>Heidelberg</th><th>Kultur</th></tr>
+                
+    </table>
+    	
+    <main id="main" role="main">
+     <form name="Formular" action="">
+         <select size="1" name="Elementtyp">
+    <option value="p">Kommentar</option>
+             </select>
+    <input type="text" name="Elementinhalt" size="50"> 
+    <input type="button" value="Hinzufügen" onclick="Hinzufuegen()"> 
+    </form> 
+    <div id="User">
+    <p></p>
+    </div>
+    </main>
+    <script>
+    function Hinzufuegen () {
+      var Typ = document.Formular.Elementtyp.options[document.Formular.Elementtyp.selectedIndex].value;
+      var Elementknoten = document.createElement(Typ);
+      if (Typ != "hr") {
+        var Textknoten = document.createTextNode(document.Formular.Elementinhalt.value);
+        Elementknoten.appendChild(Textknoten);
+      }
+      document.getElementById("User").appendChild(Elementknoten);
+    }
+        
+    </script>
+    <iframe style="height:50px; width:100%;" id="page" name="page" src="http://websynthesis.org/tools/stars/iframe.php?         quantity=5&color=000000&img1=&img2=&name=" frameborder="0" scrolling="no"></iframe>
+    <script type="text/javascript" src="http://websynthesis.org/tools/stars/js.php?id="></script>
+    </body>
+    
+</html>
