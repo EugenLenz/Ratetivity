@@ -1,0 +1,108 @@
+body {
+    background: #FFF;
+    color: black;
+    background-image: url(Bilder/Nachtwandel.jpg);
+    background-size: cover;
+}
+
+p { 
+    font-family: 'Calibri';
+  margin: 20px 0;
+  line-height: 0.8em;}
+
+h1 {
+    font-size: 3.5em;
+    color: #FFF ;
+    text-align: center;
+    background-color: #0B0855;
+    background-position: center;
+    font-family:'Tahoma',cursive;
+    border-radius: 15px;
+    border: 0px;
+    padding: 5px;
+    opacity: 0.7;
+}
+
+h2  { 
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    background-color: lime;
+    background-position:center;
+    border-radius: 15px;
+    border:0px;
+    padding: 5px;
+    opacity: 0.7;
+    }
+h3 {
+    font-size: 1.5em;
+    color: #FFFFFF;
+    background-color: darkgray;
+    text-align: center;
+    font-family:'Tahoma',cursive;
+    border-radius: 15px;
+    border: 0px;
+    padding: 10px;
+    opacity: 0.7;
+    
+}
+
+.boxgroesse {
+    width: 250px;
+    height: 175px; 
+    font-size: 15pt;
+    color: black;
+}
+
+#box1 {
+    background-color: red;
+    position: absolute;
+    top: 300px;
+    left: 450px;
+    opacity: 0.5;
+}
+
+#box2 {
+    background-color: beige;
+    position: absolute;
+    top: 450px;
+    left: 10px;
+    opacity: 0.5;
+}
+
+#box3 {
+    background-color: azure;
+    position: absolute;
+    top: 90px;
+    left: 100px;
+    opacity: 0.5;
+}
+    
+li {font-size: 1.5em;}
+li li {font-size: 1 em;}
+tr {font-size: 1.5 em;}
+a {font-size: 1.5 em; color: whitesmoke}
+
+button{
+        background-color: #0B0855; 
+        font-family: 'Tahoma'; 
+        color: #FFFFFF;
+        font-size: 1.5em;
+        border-radius: 15px;
+        border: 0px;
+        padding: 5px;
+        opacity: 0.8;
+}
+button:focus {
+        background-color: aqua; 
+        font-family: 'Tahoma'; 
+        color: #FFFFFF;
+        font-size: 1.5em;
+        border-radius: 15px;
+        border: 0px;
+        padding: 5px;
+}
+
+table, 
+td, 
+th { border: 1px solid black; }
