@@ -41,25 +41,19 @@
         </style>
             
     </head>
-    <body>  
-        
-
-        <!--<strong>Was ist diese Woche los?</strong>
-    
-        <a href="Montag.html">Montag, 26.10</a>
-        <a href="Dienstag.html">Dienstag, 27.10</a>
-        <a href="Mittwoch.html">Mittwoch, 28.10</a>
-        <a href="Donnerstag.html">Donnerstag, 29.10</a>
-        <a href="Freitag.html">Freitag, 30.10</a>
-        <a href="Samstag.html">Samstag, 31.10</a>
-        <a href="Sonntag.html">Sonntag, 01.11</a>*/-->
-    
+    <body onload="Kalender(dm,dj)";>  
         <h2>Monatskalender</h2>
+
+        <button onclick="KalenderVor()";>Vor</button>
+        <button onclick="KalenderZurueck()";> Zurück</button>
+        
+    <div id=box3>
+        
         <main role="main">
 	       <table id="kalender"> </table>
         </main>
        
-    	
+    </div>	
     </body>
  
 </html>
