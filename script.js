@@ -256,15 +256,15 @@ function KalenderVor() {
 
 }
 
-function Zurueck() {
+function KalenderZurueck() {
     if(dm==12) {
         dm=1;
         dj--;
     }else
         dm--;
     var neuerKalender = Kalender(dm,dj);
-    document.getElementById("kalender").deleteCell();
-
+    kalender.removeChild(HTMLBodyElement);
+    
 }
 
         
