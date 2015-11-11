@@ -73,7 +73,7 @@ h3 {
 #box3 {
     background-color: azure;
     position: absolute;
-    top: 400px;
+    top: 90px;
     left: 100px;
     opacity: 0.5;
 }
@@ -102,7 +102,3 @@ button:focus {
         border: 0px;
         padding: 5px;
 }
-
-table, 
-td, 
-th { border: 1px solid black; }

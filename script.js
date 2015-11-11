@@ -173,12 +173,7 @@ window.onpopstate = function(event) {
         };
 
 //Kalendar
-// dm und dj sind Monat und Jahr, die im Kalender dargestellt werden
-// insbesondere könnte auch ein Monat gewählt werden, in dem das aktuelle Datum nicht vorkommt
-var d = new Date();
-var dm = d.getMonth() + 1;
-var dj = d.getYear() + 1900;
-Kalender(dm, dj);
+
 
 function Kalender(Monat, Jahr) {
 	Monatsname = new Array("Januar", "Februar", "März", "April", "Mai", "Juni",
@@ -245,27 +240,56 @@ function Kalender(Monat, Jahr) {
 	}
 }
 
-function KalenderVor() {
-    if(dm==12) {
-        dm=1;
-        dj++;
-    }else
-        dm++;
-    var neuerKalender = Kalender(dm,dj);
-    kalender.parentNode.replaceChild(neuerKalender, kalender);
+function KalenderVor(){
 
+if (dm==12){
+    dm=1;
+    dj++;
 }
-
-function KalenderZurueck() {
-    if(dm==12) {
-        dm=1;
-        dj--;
-    }else
-        dm--;
-    var neuerKalender = Kalender(dm,dj);
-    kalender.removeChild(HTMLBodyElement);
+    else{
+    dm++;}
+var neuerKalender= Kalender(dm,dj);
     
+    var kalender= document.getElementById("kalender");
+    var zähler=5;
+    for(var i=11; i>zähler; i--){
+    document.getElementById("kalender").deleteRow(i);
+    }
+    
+
+//kalender.parentNode.replaceChild(neuerKalender.tbody,kalender.tbody);
+   
+
 }
+
+
+function KalenderZurück(){
+
+if (dm==0){
+    dm=12;
+    dj--;
+}
+    else{
+    dm--;}
+var neuerKalender= Kalender(dm,dj);
+    
+   
+    
+    var kalender= document.getElementById("kalender");
+    var kalender= document.getElementById("kalender");
+    var zähler=5;
+    for(var i=11; i>zähler; i--){
+    document.getElementById("kalender").deleteRow(i);
+    }
+//kalender.parentNode.replaceChild(neuerKalender.tbody,kalender.tbody);
+    //kalender.removeChild(kalender.tbody);
+   var d = new Date();
+        var dm = d.getMonth() + 1;
+        var dj = d.getYear() + 1900;
+        Kalender(dm, dj);
+
+}
+
 
         
 

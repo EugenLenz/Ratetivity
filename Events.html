@@ -3,57 +3,167 @@
 
     <head>
         <meta charset = "utf-8" />
-        <link rel="stylesheet" href="formate.css" type="text/css" />
-        <script language="javascript" type="text/javascript" src="script.js"></script>
-      
+        <title>Kalender</title>
         <style>
-            table {
-	           width: 350px;
-            }
-
-            table,
-            td,
-            caption {
-	           border: 1px solid black;
-	           border-collapse: collapse;
-	           padding: 0.4em;
-	           text-align: center;
-            }
-
-            td:nth-of-type(6),
-            td:nth-of-type(7) {
-	           background: #ebf5d7;
-	           color: #666;
-            }    
-
-            caption,
-            tr:first-of-type {
-	           background: #666;
-	           color: #c4ced3;
-                font-weight: bold;
-            }
-
-            td.heute {
-	           color: red;
-	           font-weight: bold;
-                background: #ffebe6;
-            }
-        </style>
-            
-    </head>
-    <body onload="Kalender(dm,dj)";>  
-        <h2>Monatskalender</h2>
-
-        <button onclick="KalenderVor()";>Vor</button>
-        <button onclick="KalenderZurueck()";> Zurück</button>
-        
-    <div id=box3>
-        
-        <main role="main">
-	       <table id="kalender"> </table>
-        </main>
-       
-    </div>	
-    </body>
+table {
+  width: 350px;
+}
  
+table, td, caption {
+    border: 1px solid black;
+    border-collapse: collapse;
+	padding: 0.4em;
+	text-align: center;
+}
+ 
+td:nth-of-type(6),td:nth-of-type(7) {
+  background: #ebf5d7;
+  color: #666;
+}
+ 
+caption, tr:first-of-type {
+  background: #666;
+  color: #c4ced3;
+  font-weight: bold;
+} 
+td.heute {
+  color:red; 
+  font-weight: bold;
+  background: #ffebe6;
+}
+ 
+</style>
+        
+    </head>
+      
+        <button onclick = "KalenderVor()">Vor</button>
+        <button onclick = "KalenderZurück()">Zurück</button>
+        <h2>Monatskalender</h2>
+        
+       <div id=box2 >
+<main role="main">
+	<table id="kalender"> </table>
+    </main>
+    </div>
+        
+        <script>
+var d = new Date();
+var dm = d.getMonth() + 1;
+var dj = d.getYear() + 1900;
+Kalender(dm, dj);
+
+function Kalender(Monat, Jahr) {
+	Monatsname = new Array("Januar", "Februar", "März", "April", "Mai", "Juni",
+		"Juli", "August", "September", "Oktober", "November", "Dezember");
+	Tag = new Array("Mo", "Di", "Mi", "Do", "Fr", "Sa", "So");
+	// aktuelles Datum für die spätere Hervorhebung ermitteln
+	var jetzt = new Date();
+	var DieserMonat = jetzt.getMonth() + 1;
+	var DiesesJahr = jetzt.getYear() + 1900;
+	var DieserTag = jetzt.getDate();
+	// ermittle Wochentag des ersten Tags im Monat halte diese Information in Start fest
+	var Zeit = new Date(Jahr, Monat - 1, 1);
+	var Start = Zeit.getDay();
+	if (Start > 0) {
+		Start--;
+	} else {
+		Start = 6;
+	}
+	// die meisten Monate haben 31 Tage...
+	var Stop = 31;
+	// ...April (4), Juni (6), September (9) und November (11) haben nur 30 Tage...
+	if (Monat == 4 || Monat == 6 || Monat == 9 || Monat == 11) --Stop;
+	// ...und der Februar nur 28 Tage...
+	if (Monat == 2) {
+		Stop = Stop - 3;
+		// ...außer in Schaltjahren
+		if (Jahr % 4 == 0) Stop++;
+		if (Jahr % 100 == 0) Stop--;
+		if (Jahr % 400 == 0) Stop++;
+	}
+	var tabelle = document.getElementById('kalender');
+	// schreibe Tabellenüberschrift
+	var Monatskopf = Monatsname[Monat - 1] + " " + Jahr;
+	var caption = tabelle.createCaption();
+	caption.innerHTML = Monatskopf;
+	// schreibe Tabellenkopf
+	var row = tabelle.insertRow(0);
+	for (var i = 0; i <= 6; i++) {
+		var cell = row.insertCell(i);
+		cell.innerHTML = Tag[i];
+	}
+	// ermittle Tag und schreibe Zeile
+	var Tageszahl = 1;
+	for (var i = 0; i <= 4; i++) {
+		var row = tabelle.insertRow(1 + i);
+		for (var j = 0; j <= 6; j++) {
+			// Zellen vor dem Start-Tag in der ersten Zeile und Zeilen nach dem Stop-Tag werden leer aufgefüllt
+			if (((i == 0) && (j <= 5) && (j < Start)) || (Tageszahl > Stop)) {
+				var cell = row.insertCell(j);
+				cell.innerHTML = ' ';
+			} else {
+				// normale Zellen werden mit der Tageszahl befüllt und mit der Klasse Kalendertag markiert
+				var cell = row.insertCell(j);
+				cell.innerHTML = Tageszahl;
+				cell.className = 'kalendertag'
+					// und der aktuelle Tag (heute) wird noch einmal speziell mit der Klasse "heute" markiert
+				if ((Jahr == DiesesJahr) && (Monat == DieserMonat) && (Tageszahl ==
+						DieserTag)) {
+					cell.className = cell.className + ' heute';
+				}
+				Tageszahl++;
+			}
+		}
+	}
+}
+
+function KalenderVor(){
+
+if (dm==12){
+    dm=1;
+    dj++;
+}
+    else{
+    dm++;}
+var neuerKalender= Kalender(dm,dj);
+    
+    var kalender= document.getElementById("kalender");
+    var zähler=5;
+    for(var i=11; i>zähler; i--){
+    document.getElementById("kalender").deleteRow(i);
+    }
+    
+
+//kalender.parentNode.replaceChild(neuerKalender.tbody,kalender.tbody);
+   
+
+}
+
+
+function KalenderZurück(){
+
+if (dm==0){
+    dm=12;
+    dj--;
+}
+    else{
+    dm--;}
+var neuerKalender= Kalender(dm,dj);
+    
+   
+    
+    var kalender= document.getElementById("kalender");
+    var kalender= document.getElementById("kalender");
+    var zähler=5;
+    for(var i=11; i>zähler; i--){
+    document.getElementById("kalender").deleteRow(i);
+    }
+//kalender.parentNode.replaceChild(neuerKalender.tbody,kalender.tbody);
+    //kalender.removeChild(kalender.tbody);
+   
+
+}
+            
+            </script>
+    </body>
 </html>
