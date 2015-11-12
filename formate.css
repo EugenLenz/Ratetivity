@@ -8,7 +8,19 @@ body {
 p { 
     font-family: 'Calibri';
   margin: 20px 0;
-  line-height: 0.8em;}
+  line-height: 0.8em;
+    color: black;
+}
+
+p1 {
+     font-family: 'Calibri';
+  margin: 20px 0;
+  line-height: 0.8em;
+    color: white;
+
+}
+
+
 
 h1 {
     font-size: 3.5em;
@@ -31,7 +43,7 @@ h2  {
     background-position:center;
     border-radius: 15px;
     border:0px;
-    padding: 5px;
+    padding: 10px;
     opacity: 0.7;
     }
 h3 {
@@ -119,7 +131,7 @@ text
 #box3 {
     background-color: azure;
     position: absolute;
-    top: 90px;
+    top: 300px;
     left: 100px;
     opacity: 0.5;
 }

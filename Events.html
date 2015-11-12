@@ -3,6 +3,7 @@
 
     <head>
         <meta charset = "utf-8" />
+         <link rel="stylesheet" href="formate.css" type="text/css" />
         <title>Kalender</title>
         <link rel="stylesheet" href="formate.css" type="text/css" />
     <script language="javascript" type="text/javascript" src="script.js"></script>
@@ -43,10 +44,10 @@ td.heute {
         <h2>Monatskalender</h2>
         
        <div id=box2 >
-<main role="main">
-	<table id="kalender"> </table>
-    </main>
-    </div>
+           <main role="main">
+	           <table id="kalender"> </table>
+           </main>
+        </div>
         
         <script>
 var d = new Date();
@@ -152,8 +153,6 @@ if (dm==0){
     dm--;}
 var neuerKalender= Kalender(dm,dj);
     
-   
-    
     var kalender= document.getElementById("kalender");
     var zähler=5;
     for(var i=11; i>zähler; i--){
@@ -165,6 +164,6 @@ var neuerKalender= Kalender(dm,dj);
 
 }
             
-            </script>
+        </script>
     </body>
 </html>
