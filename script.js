@@ -250,10 +250,10 @@ if (dm==12){
     dm++;}
 var neuerKalender= Kalender(dm,dj);
     
-    var kalender= document.getElementById("kalender");
+    var kalender= document.getElementById("Kalender");
     var zähler=5;
     for(var i=11; i>zähler; i--){
-    document.getElementById("kalender").deleteRow(i);
+    document.getElementById("Kalender").deleteRow(i);
     }
     
 
@@ -275,11 +275,11 @@ var neuerKalender= Kalender(dm,dj);
     
    
     
-    var kalender= document.getElementById("kalender");
-    var kalender= document.getElementById("kalender");
+    var kalender= document.getElementById("Kalender");
+    var kalender= document.getElementById("Kalender");
     var zähler=5;
     for(var i=11; i>zähler; i--){
-    document.getElementById("kalender").deleteRow(i);
+    document.getElementById("Kalender").deleteRow(i);
     }
 //kalender.parentNode.replaceChild(neuerKalender.tbody,kalender.tbody);
     //kalender.removeChild(kalender.tbody);
