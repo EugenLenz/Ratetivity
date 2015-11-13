@@ -250,6 +250,7 @@ if (dm==12){
     dm++;}
 var neuerKalender= Kalender(dm,dj);
     
+
     var kalender= document.getElementById("Kalender");
     var zähler=5;
     for(var i=11; i>zähler; i--){
@@ -273,9 +274,6 @@ if (dm==0){
     dm--;}
 var neuerKalender= Kalender(dm,dj);
     
-   
-    
-    var kalender= document.getElementById("Kalender");
     var kalender= document.getElementById("Kalender");
     var zähler=5;
     for(var i=11; i>zähler; i--){
