@@ -74,6 +74,7 @@ text
     height: 200px; 
     font-size: 15pt;
     color: black;
+    text-align: center;
 }
 
 #box1 {
@@ -87,9 +88,9 @@ text
 #box2 {
     background-color: beige;
     position: absolute;
-    top: 450px;
+    top: 410px;
     left: 10px;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 #box21
@@ -128,6 +129,16 @@ text
     left: 1090px;
     opacity: 0.5;
 }
+
+#box25 {
+    background-color: beige;
+    position: absolute;
+    top: 450px;
+    left: 10px;
+    opacity: 0.5;
+    
+}
+
 
 #box3 {
     background-color: azure;
